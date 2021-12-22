@@ -1,14 +1,15 @@
-import { Link, Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom"
+import TopNavigation from "../components/TopNavigation"
+
+import css from './Layout.module.css'
 
 const Layout = () => {
-    return <div>
-        <ul>
-            <Link to="/" title="movies">Movies</Link>
-            <Link to="/favorites" title="favorites">favorites</Link>
-            <Link to="/watch-later" title="watch-later">watch-later</Link>
-        </ul>
-        <Outlet />
-    </div>
+    return (
+        <div className={css.wrapper}>
+            <TopNavigation />
+            <Outlet />
+        </div>
+    )
 }
 
 export default Layout

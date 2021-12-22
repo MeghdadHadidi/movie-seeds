@@ -1,0 +1,21 @@
+.navMenu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+
+.navMenu li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: block;
+}
+
+.navMenu li.activeItem {
+    background-color: #ffffff;
+}
+
+.navMenu li.activeItem a {
+    color: #333;
+}
