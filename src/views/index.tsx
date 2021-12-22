@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom"
 
 // Views
-import Home from "./Home"
+import Layout from "./Layout"
 import Movies from "./Movies"
 import Favorites from "./Favorites"
 import WatchLater from "./WatchLater"
@@ -9,7 +9,7 @@ import WatchLater from "./WatchLater"
 const Views = () => {
     return (
         <Routes>
-            <Route path="/" element={<Home />}>
+            <Route path="/" element={<Layout />}>
                 <Route path="/" element={<Movies />} />
                 <Route path="/favorites" element={<Favorites />} />
                 <Route path="/watch-later" element={<WatchLater />} />

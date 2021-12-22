@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom"
 
-const Home = () => {
+const Layout = () => {
     return <div>
         <ul>
             <Link to="/" title="movies">Movies</Link>
@@ -11,4 +11,4 @@ const Home = () => {
     </div>
 }
 
-export default Home
+export default Layout
