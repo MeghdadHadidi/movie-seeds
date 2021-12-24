@@ -4,11 +4,16 @@ import './index.css';
 import Views from './views';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom"
+import { createInitialState, reducer, StoreProvider } from "./store"
+
+const initialState = createInitialState()
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Views />
+      <StoreProvider reducer={reducer} initialState={initialState}>
+        <Views />
+      </StoreProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
