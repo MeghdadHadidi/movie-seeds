@@ -1,11 +1,11 @@
-import MovieList from "../components/MovieList"
+import MovieWrapper from "../components/MovieWrapper"
 import SearchBox from "../components/SearchBox"
 
 const Movies = () => {
     return (
         <div>
             <SearchBox />
-            <MovieList />
+            <MovieWrapper />
         </div>
     )
 }

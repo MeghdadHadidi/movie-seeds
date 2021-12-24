@@ -31,9 +31,3 @@
 .movieListWrapper > div svg:last-of-type {
     left: 35px;
 }
-
-.movieItemTitle {
-    flex: 1;
-    padding: 1rem;
-    font-weight: 600;
-}

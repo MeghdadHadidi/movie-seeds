@@ -1,9 +1,8 @@
 import { useEffect } from "react"
 import useAxios from "../hooks/useAxios"
 import { useDispatch, useStore } from "../store"
-import { Movie } from "../store/types"
 
-const useMovieList = () => {
+const useMovieWrapper = () => {
     const store = useStore()
     const dispatch = useDispatch()
 
@@ -24,26 +23,10 @@ const useMovieList = () => {
         }
     }, [movieList])
 
-    const toggleFavorite = (movie: Movie) => {
-        dispatch({
-            type: 'TOGGLE_MOVIE_FAVORITES',
-            payload: movie
-        })
-    }
-
-    const toggleWatchList = (movie: Movie) => {
-        dispatch({
-            type: 'TOGGLE_MOVIE_WATCH_LIST',
-            payload: movie
-        })
-    }
-
     return {
         isLoading: isLoadingMovies,
-        error: movieError,
-        toggleFavorite,
-        toggleWatchList
+        error: movieError
     }
 }
 
-export default useMovieList
+export default useMovieWrapper
