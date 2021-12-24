@@ -1,0 +1,39 @@
+.movieListWrapper {
+    display: flex;
+}
+
+.movieListWrapper > div {
+    display: flex;
+    min-width: 240px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 130px;
+    box-shadow: 0 0 10px -5px rgb(0 0 0 / 30%);
+    margin: 0 1rem;
+    position: relative;
+}
+
+.movieListWrapper > div svg {
+    position: absolute;
+    left: 10px;
+    bottom: 8px;
+    z-index: 1;
+    opacity: 0.6;
+    transition: opacity ease 0.3s;
+    cursor: pointer;
+}
+
+.movieListWrapper > div:hover svg {
+    opacity: 1;
+}
+
+.movieListWrapper > div svg:last-of-type {
+    left: 35px;
+}
+
+.movieItemTitle {
+    flex: 1;
+    padding: 1rem;
+    font-weight: 600;
+}
