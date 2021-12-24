@@ -8,12 +8,13 @@
 .navMenu li a {
     text-decoration: none;
     color: #fff;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1.5rem;
     display: block;
 }
 
 .navMenu li.activeItem {
     background-color: #ffffff;
+    border-radius: 4px;
 }
 
 .navMenu li.activeItem a {

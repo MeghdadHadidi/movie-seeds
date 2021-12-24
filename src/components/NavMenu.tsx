@@ -28,8 +28,8 @@ const NavMenu = () => {
 
     return (
         <ul className={css.navMenu}>
-            {links?.map(link => (
-                <li className={isActive(link.path) ? css.activeItem : ''}>
+            {links?.map((link, key) => (
+                <li key={key} className={isActive(link.path) ? css.activeItem : ''}>
                     <Link to={link.path} title={link.title}>{link.title}</Link>
                 </li>
             ))}
