@@ -1,0 +1,9 @@
+.movieListWrapper > div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.movieListWrapper > h4 {
+    color: #fff;
+}

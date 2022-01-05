@@ -11,14 +11,19 @@ const NavMenu = () => {
             path: '/'
         },
         {
-            name: 'favorites',
-            title: 'Favorites',
-            path: '/favorites'
+            name: 'top-rated',
+            title: 'Top Rated',
+            path: '/top-rated'
         },
         {
-            name: 'watch-later',
-            title: 'Watch Later',
-            path: '/watch-later'
+            name: 'popular',
+            title: 'Popular',
+            path: '/popular'
+        },
+        {
+            name: 'upcoming',
+            title: 'Upcoming',
+            path: '/upcoming'
         }
     ]
 

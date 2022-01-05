@@ -1,5 +1,64 @@
 .movieItemTitle {
     flex: 1;
     padding: 1rem;
-    font-weight: 600;
+}
+
+.movieItemTitle h5 {
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+}
+
+.movieItemWrapper {
+    flex: 0 0 33.333333%;
+    margin-bottom: 2rem;
+}
+
+.movieItemWrapper > div:first-child {
+    display: flex;
+    min-width: 240px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 130px;
+    box-shadow: 0 0 10px -5px rgb(0 0 0 / 30%);
+    margin: 0 1rem;
+    position: relative;
+}
+
+.movieItemWrapper > div:first-child svg {
+    position: absolute;
+    left: 10px;
+    bottom: 8px;
+    z-index: 1;
+    opacity: 0.5;
+    transition: opacity ease 0.3s;
+    cursor: pointer;
+}
+
+.movieItemWrapper > div:first-child:hover svg {
+    opacity: 1;
+}
+
+.movieItemWrapper > div:first-child  svg:last-of-type {
+    left: 35px;
+}
+
+.genreLabels {
+    
+}
+
+.genreLabels span {
+    font-size: 9px;
+    display: inline-block;
+    padding: 1px 3px;
+    background-color: #f1f1f1;
+    color: #a5a5a5;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    margin-right: 2px;
+}
+
+.genreLabels span:last-child {
+    margin: 0;
 }

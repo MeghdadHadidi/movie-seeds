@@ -1,6 +1,6 @@
 const SearchBox = () => {
     return (
-        <div></div>
+        <div>Search Box</div>
     )
 }
 

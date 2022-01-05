@@ -17,6 +17,11 @@ export interface Movie {
     vote_average: number,
 }
 
+export interface Genre {
+    id: number,
+    name: string
+}
+
 export type Reducer = (
     state: StateModel, 
     action: ReducerAction
@@ -44,10 +49,34 @@ export interface StateModel {
     },
     movies: {
         items: Movie[] | null,
+        error: string | null,
+        isLoading: boolean
+    },
+    topRatedMovies: {
+        items: Movie[] | null,
+        error: string | null,
+        isLoading: boolean
+    },
+    popularMovies: {
+        items: Movie[] | null,
+        error: string | null,
+        isLoading: boolean
+    },
+    upcomingMovies: {
+        items: Movie[] | null,
+        error: string | null,
         isLoading: boolean
     },
     config: {
         items: Config | null,
+        error: string | null,
+        isLoading: boolean
+    },
+    genres: {
+        items: {
+            [key: string]: string
+        } | null,
+        error: string | null,
         isLoading: boolean
     }
 }
@@ -67,4 +96,24 @@ export interface AddToFavoriteRequest {
     media_type: string,
     media_id: string,
     favorite: boolean
+}
+
+export const ActionTypes = {
+    SET_TOPRATE_MOVIES: 'SET_TOPRATE_MOVIES',
+    SET_TOPRATED_IS_LOADING: 'SET_TOPRATED_IS_LOADING',
+    SET_TOPRATED_ERROR: 'SET_TOPRATED_ERROR',
+    SET_POPULAR_MOVIES: 'SET_POPULAR_MOVIES',
+    SET_POPULAR_IS_LOADING: 'SET_POPULAR_IS_LOADING',
+    SET_POPULAR_ERROR: 'SET_POPULAR_ERROR',
+    SET_UPCOMING_MOVIES: 'SET_UPCOMING_MOVIES',
+    SET_UPCOMING_IS_LOADING: 'SET_UPCOMING_IS_LOADING',
+    SET_UPCOMING_ERROR: 'SET_UPCOMING_ERROR',
+    SET_CONFIG_IS_LOADING: 'SET_CONFIG_IS_LOADING',
+    SET_CONFIG_ERROR: 'SET_CONFIG_ERROR',
+    SET_CONFIG: 'SET_CONFIG',
+    SET_GENRES_IS_LOADING: 'SET_GENRES_IS_LOADING',
+    SET_GENRES_ERROR: 'SET_GENRES_ERROR',
+    SET_GENRES: 'SET_GENRES',
+    TOGGLE_MOVIE_FAVORITES: 'TOGGLE_MOVIE_FAVORITES',
+    TOGGLE_MOVIE_WATCH_LIST: 'TOGGLE_MOVIE_WATCH_LIST'
 }

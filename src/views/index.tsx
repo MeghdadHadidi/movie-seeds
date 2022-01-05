@@ -11,6 +11,7 @@ const Views = () => {
         <Routes>
             <Route path="/" element={<Layout />}>
                 <Route path="/" element={<Movies />} />
+                <Route path="/:category" element={<Movies />} />
                 <Route path="/favorites" element={<Favorites />} />
                 <Route path="/watch-later" element={<WatchLater />} />
                 <Route path="*" element={<div>

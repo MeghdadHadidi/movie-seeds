@@ -1,19 +1,19 @@
 import { useDispatch } from "../store"
-import { Movie } from "../store/types"
+import { ActionTypes, Movie } from "../store/types"
 
 const useMovieItem = () => {
     const dispatch = useDispatch()
     
     const toggleFavorite = (movie: Movie) => {
         dispatch({
-            type: 'TOGGLE_MOVIE_FAVORITES',
+            type: ActionTypes.TOGGLE_MOVIE_FAVORITES,
             payload: movie
         })
     }
 
     const toggleWatchList = (movie: Movie) => {
         dispatch({
-            type: 'TOGGLE_MOVIE_WATCH_LIST',
+            type: ActionTypes.TOGGLE_MOVIE_WATCH_LIST,
             payload: movie
         })
     }
