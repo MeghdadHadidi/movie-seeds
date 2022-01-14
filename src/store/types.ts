@@ -52,6 +52,11 @@ export interface StateModel {
         error: string | null,
         isLoading: boolean
     },
+    search: {
+        items: Movie[] | null,
+        error: string | null,
+        isLoading: boolean
+    },
     topRatedMovies: {
         items: Movie[] | null,
         error: string | null,
@@ -99,6 +104,9 @@ export interface AddToFavoriteRequest {
 }
 
 export const ActionTypes = {
+    SET_SEARCH_RESULT: 'SET_SEARCH_RESULT',
+    SET_SEARCH_LOADING: 'SET_SEARCH_LOADING',
+    SET_SEARCH_ERROR: 'SET_SEARCH_ERROR',
     SET_TOPRATE_MOVIES: 'SET_TOPRATE_MOVIES',
     SET_TOPRATED_IS_LOADING: 'SET_TOPRATED_IS_LOADING',
     SET_TOPRATED_ERROR: 'SET_TOPRATED_ERROR',

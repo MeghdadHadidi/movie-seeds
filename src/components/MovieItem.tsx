@@ -24,7 +24,7 @@ const MovieItem = ({ movie }: Props) => {
                     <h5>{movie.title}</h5>
 
                     <div className={css.genreLabels}>
-                        {genres && movie.genre_ids.map((genre, key) => (
+                        {genres && movie.genre_ids.map((genre) => (
                             <span key={genre}>{genres[genre]}</span>
                         ))}
                     </div>

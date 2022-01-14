@@ -9,6 +9,11 @@ export default function createInitialState(): StateModel {
             error: null,
             isLoading: false
         },
+        search: {
+            items: null,
+            error: null,
+            isLoading: false
+        },
         topRatedMovies: {
             items: null,
             error: null,

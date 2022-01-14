@@ -14,6 +14,18 @@ const reducer = (state: StateModel, action: ReducerAction) => {
         case ActionTypes.SET_TOPRATED_IS_LOADING:
             state.topRatedMovies.isLoading = !!action.payload
             break
+        case ActionTypes.SET_SEARCH_RESULT:
+            state.search.items = action.payload as Movie[]
+            state.search.isLoading = false
+            break
+        case ActionTypes.SET_SEARCH_ERROR:
+            state.search.items = null
+            state.search.isLoading = false
+            state.search.error = String(action.payload)
+            break
+        case ActionTypes.SET_SEARCH_LOADING:
+            state.search.isLoading = !!action.payload
+            break
         case ActionTypes.SET_POPULAR_MOVIES:
             state.popularMovies.items = action.payload as Movie[]
             state.popularMovies.isLoading = false

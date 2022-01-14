@@ -65,6 +65,9 @@ const useAxios = (url: string, method: string = 'GET') => {
     }
 
     const fetch = useCallback(async (body?: unknown) => {
+        dispatch({
+            type: 'SET_LOADING'
+        })
         try {
             let result;
             if(method === 'POST') {
