@@ -1,0 +1,84 @@
+body {
+    background-image: linear-gradient(147deg, #000000 0%, #04619f 100%);
+}
+
+.detailGallery {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.detailSummaryWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 2rem;
+    color: #fff;
+}
+
+.detailSummaryWrapper h1 {
+    display: flex;
+}
+
+.detailSummaryWrapper p {
+    line-height: 1.5rem;
+}
+
+.detailSummaryWrapper > div:first-child {
+    flex: 1;
+}
+
+.sideDetails span {
+    padding: 2px 5px;
+    display: inline-block;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    font-size: 12px;
+    margin-right: 3px;
+}
+
+.sideDetails {
+    margin-left: 20px;
+}
+
+.sideDetails > div {
+    margin-bottom: 30px;
+}
+
+.sideDetails > div strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.sideDetails > div img {
+    max-height: 30px;
+    min-height: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.averageVote {
+    font-size: 14px;
+    background: yellow;
+    color: #000;
+    padding: 2px 5px;
+    display: inline-block;
+    border-radius: 3px;
+    margin-left: 10px;
+    width: 25px;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+@media screen and (max-width: 1024px){
+    .detailSummaryWrapper {
+        flex-direction: column;
+    }
+
+    .sideDetails {
+        margin-left: 0;
+    }
+}

@@ -1,4 +1,4 @@
-import { KeyboardEvent, useState } from "react"
+import { KeyboardEvent, useEffect, useState } from "react"
 import useSearchBox from "../hooks/useSearchBox"
 import LoadingSpinner from "./LoadingSpinner"
 import SearchResult from "./SearchResult"
@@ -20,14 +20,16 @@ const SearchBox = () => {
             resetSearch()
             return;
         }
+    }
 
+    useEffect(() => {
         if(keyword.length < 3) {
             cancelSearch()
             resetResult()
             return;
         };
         searchByKeyword()
-    }
+    }, [keyword])
 
     const searchInputClass = searchIsLoading ? css.searchInputLoading : css.searchInput
 
