@@ -1,10 +1,38 @@
 import { ReactChild } from 'react'
 
+export interface Video {
+    id: string,
+    iso_639_1: string,
+    iso_3166_1: string,
+    key: string,
+    name: string,
+    official: true
+    published_at: string,
+    site: string,
+    size: number,
+    type: string,
+}
+
+export interface Cast {
+    adult: boolean,
+    cast_id: number,
+    character: string,
+    credit_id: string,
+    gender: number,
+    id: number,
+    known_for_department: string,
+    name: string,
+    order: number,
+    original_name: string,
+    popularity: number,
+    profile_path: string,
+}
 export interface Movie {
     poster_path: string | null,
     adult: boolean,
     overview: string,
     release_date: string,
+    genres: {id: string, name: string}[],
     genre_ids: number[],
     id: number,
     original_title: string,
@@ -15,6 +43,13 @@ export interface Movie {
     vote_count: number,
     video: boolean,
     vote_average: number,
+    videos?: {
+        results: Video[]
+    },
+    credits?: {
+        cast?: Cast[],
+        crew?: {}
+    }
 }
 
 export interface Genre {
@@ -48,9 +83,7 @@ export interface StateModel {
         [key: string]: Movie
     },
     movies: {
-        items: Movie[] | null,
-        error: string | null,
-        isLoading: boolean
+        [key: string]: Movie
     },
     search: {
         items: Movie[] | null,
@@ -123,5 +156,6 @@ export const ActionTypes = {
     SET_GENRES_ERROR: 'SET_GENRES_ERROR',
     SET_GENRES: 'SET_GENRES',
     TOGGLE_MOVIE_FAVORITES: 'TOGGLE_MOVIE_FAVORITES',
-    TOGGLE_MOVIE_WATCH_LIST: 'TOGGLE_MOVIE_WATCH_LIST'
+    TOGGLE_MOVIE_WATCH_LIST: 'TOGGLE_MOVIE_WATCH_LIST',
+    SET_MOVIES: 'SET_MOVIES'
 }

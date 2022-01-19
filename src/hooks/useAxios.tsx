@@ -28,11 +28,6 @@ interface StateType {
     error?: unknown
 }
 
-interface SessionIdResponse {
-    sessionId: string,
-    expiresAt: string
-}
-
 const useAxios = (url: string, method: string = 'GET') => {
     const [state, dispatch] = useReducer(reducer, {
         isLoading: false,
@@ -73,7 +68,9 @@ const useAxios = (url: string, method: string = 'GET') => {
             if(method === 'POST') {
                 result = await axiosClient.post(url, body)
             } else {
-                result = await axiosClient.get(url)
+                result = await axiosClient.get(url, {
+                    params: body
+                })
             }
             
             if(result?.data){                

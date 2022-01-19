@@ -23,6 +23,11 @@ const useTopRatedMovies = () => {
     useEffect(() => {
         if(topRatedResult?.results?.length) {
             dispatch({
+                type: ActionTypes.SET_MOVIES,
+                payload: topRatedResult?.results
+            })
+
+            dispatch({
                 type: ActionTypes.SET_TOPRATE_MOVIES,
                 payload: topRatedResult?.results
             })

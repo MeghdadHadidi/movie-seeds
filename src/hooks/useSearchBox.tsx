@@ -17,6 +17,10 @@ const useSearchBox = (keyword: string) => {
                 payload: searchError
             })
         } else if(searchResponse){
+            dispatch({
+                type: ActionTypes.SET_MOVIES,
+                payload: searchResponse?.results?.items
+            })
             setSearchResult(searchResponse?.results)
         }
     }, [searchResponse, searchError])

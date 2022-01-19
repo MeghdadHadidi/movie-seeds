@@ -1,0 +1,23 @@
+
+.searchResultItem {
+    padding: 5px 10px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.searchResultItem:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.searchItemImg {
+    height: 25px;
+    width: 19px;
+    margin-right: 10px;
+    background: #ccc;
+}
+
+.searchItemImg img {
+    height: 100%;
+}

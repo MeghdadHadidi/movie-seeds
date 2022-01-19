@@ -23,6 +23,11 @@ const usePopularMovies = () => {
     useEffect(() => {
         if(popularResult?.results?.length) {
             dispatch({
+                type: ActionTypes.SET_MOVIES,
+                payload: popularResult?.results
+            })
+
+            dispatch({
                 type: ActionTypes.SET_POPULAR_MOVIES,
                 payload: popularResult?.results
             })

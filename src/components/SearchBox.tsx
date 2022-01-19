@@ -1,18 +1,29 @@
-import { useState } from "react"
+import { KeyboardEvent, useState } from "react"
 import useSearchBox from "../hooks/useSearchBox"
+import LoadingSpinner from "./LoadingSpinner"
+import SearchResult from "./SearchResult"
 
 import css from './SearchBox.module.css'
-
-const IMG_BASE_URL = process.env.REACT_APP_IMAGE_BASE_URL
 
 const SearchBox = () => {
     const [keyword, setKeyword] = useState('')
     const { searchByKeyword, searchResult, searchIsLoading, resetResult, cancelSearch } = useSearchBox(keyword)
 
-    const handleKeyup = () => {
+    const resetSearch = () => {
+        cancelSearch()
+        resetResult()
+        setKeyword('')
+    }
+
+    const handleKeyup = (event: KeyboardEvent<HTMLInputElement>): void => {
+        if(event.key === 'Escape') {
+            resetSearch()
+            return;
+        }
+
         if(keyword.length < 3) {
-            resetResult()
             cancelSearch()
+            resetResult()
             return;
         };
         searchByKeyword()
@@ -30,24 +41,12 @@ const SearchBox = () => {
                     onKeyUp={handleKeyup} 
                     onChange={(event) => setKeyword(event.target.value)} 
                 />
+
+                {keyword && <span className={css.clearIcon} onClick={resetSearch}>✖</span>}
+                {searchIsLoading && <span className={css.spinner}><LoadingSpinner /></span>}
             </div>
 
-            <div className={css.searchBoxResult}>
-                {!searchIsLoading && (
-                    <ul>
-                        {searchResult.map(movie => (
-                            <li key={movie.id}>
-                                <span className={css.searchItemImg}>
-                                    {movie.poster_path && 
-                                        <img src={`${IMG_BASE_URL}/w92/${movie.poster_path}`} alt={movie.original_title} />
-                                    }
-                                </span>
-                                <span>{movie.title}</span>
-                            </li>
-                        ))}
-                    </ul>
-                )}
-            </div>
+            {!searchIsLoading && <SearchResult movies={searchResult} />}
         </div>
     )
 }

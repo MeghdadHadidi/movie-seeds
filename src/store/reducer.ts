@@ -92,6 +92,11 @@ const reducer = (state: StateModel, action: ReducerAction) => {
                 state.watchList[(action.payload as Movie)?.id] = action.payload as Movie
             }
             break
+        case ActionTypes.SET_MOVIES:
+            (action?.payload as Movie[])?.forEach(movie => {
+                state.movies[movie.id] = movie
+            })
+            break;
         default:
             break
     }

@@ -6,6 +6,7 @@ import css from './MovieItem.module.css'
 import { Movie } from "../store/types"
 import useMovieItem from "../hooks/useMovieItem"
 import LazyImage from "./LazyImage"
+import { useNavigate } from "react-router-dom"
 
 const IMG_BASE_URL = process.env.REACT_APP_IMAGE_BASE_URL
 
@@ -17,8 +18,14 @@ const MovieItem = ({ movie }: Props) => {
     const { favorites, watchList, genres: { items: genres } } = useStore()
     const { toggleFavorite, toggleWatchList } = useMovieItem()
 
+    const navigate = useNavigate()
+
+    const goToMovieDetail = () => {
+        navigate(`/movie/${movie.id}`)
+    }
+    
     return (
-        <div className={css.movieItemWrapper}>
+        <div className={css.movieItemWrapper} onClick={goToMovieDetail}>
             <div>
                 <div className={css.movieItemTitle}>
                     <h5>{movie.title}</h5>

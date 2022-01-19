@@ -4,11 +4,7 @@ export default function createInitialState(): StateModel {
     return {
         favorites: {},
         watchList: {},
-        movies: {
-            items: null,
-            error: null,
-            isLoading: false
-        },
+        movies: {},
         search: {
             items: null,
             error: null,

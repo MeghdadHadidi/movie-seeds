@@ -23,6 +23,11 @@ const useUpcomingMovies = () => {
     useEffect(() => {
         if(upcomingResult?.results?.length) {
             dispatch({
+                type: ActionTypes.SET_MOVIES,
+                payload: upcomingResult?.results
+            })
+
+            dispatch({
                 type: ActionTypes.SET_UPCOMING_MOVIES,
                 payload: upcomingResult?.results
             })

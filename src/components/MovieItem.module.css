@@ -24,6 +24,8 @@
     box-shadow: 0 0 10px -5px rgb(0 0 0 / 30%);
     margin: 0 1rem;
     position: relative;
+    transition: box-shadow ease 0.2s;
+    cursor: pointer;
 }
 
 .movieItemWrapper > div:first-child svg {
@@ -42,6 +44,10 @@
 
 .movieItemWrapper > div:first-child  svg:last-of-type {
     left: 35px;
+}
+
+.movieItemWrapper:hover > div {
+    box-shadow: 0 0 20px 5px rgb(0 0 0 / 30%);
 }
 
 .genreLabels {
