@@ -3,22 +3,29 @@ import { ReactComponent as HeartIcon } from '../assets/img/heart.svg'
 
 import css from './UserMenu.module.css'
 import { useStore } from "../store"
+import { useNavigate } from "react-router-dom"
 
 const UserMenu = () => {
     const { favorites, watchList } = useStore()
+    const navigate = useNavigate()
 
-    const favoriteItemsLength = Object.keys(favorites).length
-    const watchListItemsLength = Object.keys(watchList).length
+    const goToFavorites = () => {
+        navigate('/favorites')
+    }
+
+    const goToWatchlist = () => {
+        navigate('/watch-later')
+    }
 
     return (
         <div className={css.userMenuWrapper}>
-            <span>
+            <span role="link" onClick={goToFavorites}>
                 <HeartIcon fill="white" width={28} height={28} />
-                {favoriteItemsLength > 0 && <span>{favoriteItemsLength}</span>}
+                {favorites.length > 0 && <span>{favorites.length}</span>}
             </span>
-            <span>
+            <span role="link" onClick={goToWatchlist}>
                 <LaterIcon fill="white" width={28} height={28} />
-                {watchListItemsLength > 0 && <span>{watchListItemsLength}</span>}
+                {watchList.length > 0 && <span>{watchList.length}</span>}
             </span>
         </div>
     )

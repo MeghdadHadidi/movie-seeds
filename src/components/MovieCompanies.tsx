@@ -16,7 +16,7 @@ const MovieCompanies = ({ companies }: Props) => {
             <h3>Companies</h3>
             <ul>
                 {companies.map(company => (
-                    <li>
+                    <li key={company.id}>
                         <img src={`${IMG_BASE_URL}/w92${company.logo_path}`} alt={company.name} />
                     </li>
                 ))}

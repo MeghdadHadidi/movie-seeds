@@ -105,12 +105,8 @@ export interface Config {
 }
 
 export interface StateModel {
-    favorites: {
-        [key: string]: Movie
-    },
-    watchList: {
-        [key: string]: Movie
-    },
+    favorites: Movie[],
+    watchList: Movie[],
     movies: {
         [key: string]: Movie
     },
@@ -145,7 +141,8 @@ export interface StateModel {
         } | null,
         error: string | null,
         isLoading: boolean
-    }
+    },
+    averageColor?: string
 }
 
 export interface ReducerAction {
@@ -186,5 +183,6 @@ export const ActionTypes = {
     SET_GENRES: 'SET_GENRES',
     TOGGLE_MOVIE_FAVORITES: 'TOGGLE_MOVIE_FAVORITES',
     TOGGLE_MOVIE_WATCH_LIST: 'TOGGLE_MOVIE_WATCH_LIST',
-    SET_MOVIES: 'SET_MOVIES'
+    SET_MOVIES: 'SET_MOVIES',
+    SET_AVERAGE_COLOR: 'SET_AVERAGE_COLOR'
 }

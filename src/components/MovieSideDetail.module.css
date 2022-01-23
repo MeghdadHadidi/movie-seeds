@@ -1,0 +1,37 @@
+.sideDetails {
+    flex: 0 0 20%;
+    margin-left: 20px;
+}
+
+.sideDetails span {
+    padding: 2px 5px;
+    display: inline-block;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    font-size: 12px;
+    margin-right: 3px;
+}
+
+
+.sideDetails > div {
+    margin-bottom: 30px;
+}
+
+.sideDetails > div strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.sideDetails > div img {
+    max-height: 30px;
+    min-height: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+@media screen and (max-width: 1024px){
+    .sideDetails {
+        margin-left: 0;
+    }
+}

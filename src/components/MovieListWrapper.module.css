@@ -7,3 +7,9 @@
 .movieListWrapper > h4 {
     color: #fff;
 }
+
+@media screen and (max-width: 767px) {
+    .movieListWrapper > div {
+        flex-direction: column;
+    }
+}

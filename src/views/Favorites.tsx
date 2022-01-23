@@ -1,5 +1,10 @@
+import MovieList from "../components/MovieList"
+import { useStore } from "../store"
+
 const Favorites = () => {
-    return <div>Favorites</div>
+    const { favorites } = useStore()
+
+    return <MovieList count={100} movies={{ items: favorites }} />
 }
 
 export default Favorites

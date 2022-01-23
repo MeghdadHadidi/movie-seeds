@@ -1,6 +1,6 @@
 import useMovieDetail from "../hooks/useMovieDetail"
+import Container from "./Container"
 
-import css from './MovieDetail.module.css'
 import MovieDetailSummary from "./MovieDetailSummary"
 
 interface Props {
@@ -13,9 +13,9 @@ const MovieDetail = ({ movieId }: Props) => {
     if(!movieId || !movie) return null;
     
     return (
-        <div className={css.detailWrapper}>
+        <Container>
             <MovieDetailSummary movie={movie} genres={genres} />
-        </div>
+        </Container>
     )
 }
 

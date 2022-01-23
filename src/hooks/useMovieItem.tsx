@@ -1,17 +1,26 @@
-import { useDispatch } from "../store"
+import { MouseEvent, useMemo } from "react"
+import { useNavigate } from "react-router-dom"
+import { useDispatch, useStore } from "../store"
 import { ActionTypes, Movie } from "../store/types"
 
-const useMovieItem = () => {
+const useMovieItem = (movie: Movie) => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+    const goToMovieDetail = (event: MouseEvent) => {
+        if((event.target as HTMLElement).tagName !== 'svg') {
+            navigate(`/movie/${movie.id}`)
+        }
+    }
     
-    const toggleFavorite = (movie: Movie) => {
+    const toggleFavorite = () => {
         dispatch({
             type: ActionTypes.TOGGLE_MOVIE_FAVORITES,
             payload: movie
         })
     }
 
-    const toggleWatchList = (movie: Movie) => {
+    const toggleWatchList = () => {
         dispatch({
             type: ActionTypes.TOGGLE_MOVIE_WATCH_LIST,
             payload: movie
@@ -20,7 +29,8 @@ const useMovieItem = () => {
 
     return {
         toggleFavorite,
-        toggleWatchList
+        toggleWatchList,
+        goToMovieDetail
     }
 }
 

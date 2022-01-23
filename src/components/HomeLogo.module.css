@@ -1,0 +1,11 @@
+.logoWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0 0;
+}
+
+.logoWrapper h1 {
+    margin-left: 1rem;
+    color: #fff;
+}

@@ -20,3 +20,13 @@
 .navMenu li.activeItem a {
     color: #333;
 }
+
+@media screen and (max-width: 768px) {
+    .navMenu li {
+        display: none;
+    }
+    
+    .navMenu li.showOnMobile {
+        display: inline-block;
+    }
+}

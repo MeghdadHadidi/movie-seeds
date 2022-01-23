@@ -79,23 +79,28 @@ const reducer = (state: StateModel, action: ReducerAction) => {
             state.genres.error = String(action.payload)
             break
         case ActionTypes.TOGGLE_MOVIE_FAVORITES:
-            if(state.favorites[(action.payload as Movie)?.id]){
-                delete state.favorites[(action.payload as Movie)?.id]
+            const existsInFavorites = state.favorites.some(movie => movie.id === (action.payload as Movie)?.id)
+            if(existsInFavorites){
+                state.favorites = state.favorites.filter(fav => fav.id !== (action.payload as Movie).id)
             } else {
-                state.favorites[(action.payload as Movie)?.id] = action.payload as Movie
+                state.favorites.push(action.payload as Movie)
             }
             break
         case ActionTypes.TOGGLE_MOVIE_WATCH_LIST:
-            if(state.watchList[(action.payload as Movie)?.id]){
-                delete state.watchList[(action.payload as Movie)?.id]
+            const existsInWatchList = state.watchList.some(movie => movie.id === (action.payload as Movie)?.id)
+            if(existsInWatchList){
+                state.watchList = state.watchList.filter(watchedItem => watchedItem.id !== (action.payload as Movie).id)
             } else {
-                state.watchList[(action.payload as Movie)?.id] = action.payload as Movie
+                state.watchList.push(action.payload as Movie)
             }
             break
         case ActionTypes.SET_MOVIES:
             (action?.payload as Movie[])?.forEach(movie => {
                 state.movies[movie.id] = movie
             })
+            break;
+        case ActionTypes.SET_AVERAGE_COLOR:
+            state.averageColor = action?.payload as string
             break;
         default:
             break

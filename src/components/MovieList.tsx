@@ -6,12 +6,13 @@ import MovieItem from "./MovieItem"
 interface Props {
     movies: {
         items: Movie[] | null,
-        error: string | null,
-        isLoading: boolean
-    }
+        error?: string | null,
+        isLoading?: boolean,
+    },
+    count?: number
 }
 
-const MovieList = ({ movies }: Props) => {
+const MovieList = ({ movies, count }: Props) => {
     const { error, isLoading, items } = movies;
     const { category } = useParams()
 
@@ -25,7 +26,7 @@ const MovieList = ({ movies }: Props) => {
 
     return (
         <div>
-            {(category ? items : items?.slice(0, 3))?.map((movie, key) => (
+            {(category ? items : items?.slice(0, count || 4))?.map((movie, key) => (
                 <MovieItem movie={movie} key={key} />
             ))}
         </div>

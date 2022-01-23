@@ -1,6 +1,27 @@
 body {
     height: 100%;
     background-color: #000000;
-    background-image: linear-gradient(147deg, #000000 0%, #04619f 74%);
-    transition: all ease 0.3s;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.wrapper .backdrop {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    min-height: 100vh;
+    max-width: 100%;
+    opacity: 0;
+    background-attachment: fixed;
+    transition: all ease 2s;
+    z-index: -1;
+}
+
+.wrapper .backdrop.backdropActive {
+    opacity: 1;
+    transition: all ease 2s;
 }

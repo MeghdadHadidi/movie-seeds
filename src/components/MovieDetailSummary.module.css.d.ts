@@ -1,7 +1,6 @@
 declare const MovieDetailSummaryCss: {
     readonly detailSummaryWrapper: string;
-    readonly spokenLanguages: string;
-    readonly sideDetails: string;
+    readonly detailText: string;
     readonly detailGallery: string;
     readonly detailCastWrapper: string;
     readonly averageVote: string;

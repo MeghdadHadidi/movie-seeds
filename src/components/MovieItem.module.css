@@ -10,13 +10,13 @@
 }
 
 .movieItemWrapper {
-    flex: 0 0 33.333333%;
+    flex: 0 0 25%;
     margin-bottom: 2rem;
+    box-sizing: border-box;
 }
 
 .movieItemWrapper > div:first-child {
     display: flex;
-    min-width: 240px;
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
@@ -34,7 +34,7 @@
     bottom: 8px;
     z-index: 1;
     opacity: 0.5;
-    transition: opacity ease 0.3s;
+    transition: all ease 0.2s;
     cursor: pointer;
 }
 
@@ -50,8 +50,8 @@
     box-shadow: 0 0 20px 5px rgb(0 0 0 / 30%);
 }
 
-.genreLabels {
-    
+.movieItemWrapper svg:hover {
+    transform: scale(1.2);
 }
 
 .genreLabels span {
@@ -67,4 +67,17 @@
 
 .genreLabels span:last-child {
     margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .movieItemWrapper {
+        flex: 0 0 33.33333%;
+        min-width: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .movieItemWrapper {
+        flex: 0 0 50%;
+    }
 }

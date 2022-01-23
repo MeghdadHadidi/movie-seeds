@@ -2,8 +2,8 @@ import { StateModel } from "./types"
 
 export default function createInitialState(): StateModel {
     return {
-        favorites: {},
-        watchList: {},
+        favorites: [],
+        watchList: [],
         movies: {},
         search: {
             items: null,

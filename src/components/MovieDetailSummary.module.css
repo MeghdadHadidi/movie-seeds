@@ -6,56 +6,28 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-bottom: 3rem;
 }
 
 .detailSummaryWrapper {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
     padding-top: 2rem;
     color: #fff;
 }
 
 .detailSummaryWrapper h1 {
     display: flex;
+    margin-top: 0;
 }
 
 .detailSummaryWrapper p {
     line-height: 1.5rem;
 }
 
-.detailSummaryWrapper > div:first-child {
-    flex: 1;
-}
-
-.sideDetails span {
-    padding: 2px 5px;
-    display: inline-block;
-    border: 1px solid #fff;
-    border-radius: 3px;
-    font-size: 12px;
-    margin-right: 3px;
-}
-
-.sideDetails {
-    margin-left: 20px;
-}
-
-.sideDetails > div {
-    margin-bottom: 30px;
-}
-
-.sideDetails > div strong {
-    display: block;
-    margin-bottom: 8px;
-}
-
-.sideDetails > div img {
-    max-height: 30px;
-    min-height: 20px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    display: block;
+.detailText {
+    display: flex;
 }
 
 .averageVote {
@@ -74,11 +46,7 @@ body {
 }
 
 @media screen and (max-width: 1024px){
-    .detailSummaryWrapper {
+    .detailText {
         flex-direction: column;
-    }
-
-    .sideDetails {
-        margin-left: 0;
     }
 }
