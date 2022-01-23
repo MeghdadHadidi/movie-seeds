@@ -11,7 +11,7 @@ const useMovieDetail = (movieId: string) => {
     const dispatch = useDispatch()
     const [fetchMovieDetail, movieDetailResponse, movieDetailError, movieDetailIsLoading] = useAxios(`/movie/${movieId}`)
 
-    const movie = useMemo(() => movies[movieId], [movieId, movies])
+    const movie = useMemo(() => movies?.[movieId], [movieId, movies])
     const genres = movie?.genres?.map(genre => genre.name)
 
     useEffect(() => {

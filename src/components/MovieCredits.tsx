@@ -7,12 +7,13 @@ import womanAvatar from '../assets/img/woman-avatar.jpg'
 import unisexAvatar from '../assets/img/unisex-avatar.jpg'
 
 interface Props {
-    cast?: Cast[]
+    cast?: Cast[],
+    count?: number
 }
 
 const IMG_BASE_URL = process.env.REACT_APP_IMAGE_BASE_URL
 
-const MovieCast = ({ cast }: Props) => {
+const MovieCast = ({ cast, count }: Props) => {
     if(!cast) return null;
 
     const getAvatar = (cast: Cast) => {
@@ -31,10 +32,10 @@ const MovieCast = ({ cast }: Props) => {
     return (
         <div className={css.castWrapper}>
             <h3>Cast</h3>
-            <ul>
-                {cast?.slice(0, 10).map(cast => (
-                    <li key={cast.id}>
-                        <picture>
+            <ul role="grid">
+                {cast?.slice(0, count || Number.MAX_SAFE_INTEGER).map(cast => (
+                    <li key={cast.id} role="gridcell">
+                        <picture role="figure">
                             <img src={getAvatar(cast)} alt={cast.name} />
                         </picture>
                         <span>{cast.name}</span>
