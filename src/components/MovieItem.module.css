@@ -28,29 +28,35 @@
     cursor: pointer;
 }
 
-.movieItemWrapper > div:first-child svg {
+.movieItemWrapper > div > span {
     position: absolute;
-    left: 10px;
-    bottom: 8px;
+    left: 2px;
+    bottom: 2px;
     z-index: 1;
     opacity: 0.5;
     transition: all ease 0.2s;
     cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.movieItemWrapper > div:first-child:hover svg {
+.movieItemWrapper > div > span:hover {
     opacity: 1;
 }
 
-.movieItemWrapper > div:first-child  svg:last-of-type {
+.movieItemWrapper > div > span:last-of-type {
     left: 35px;
 }
+
 
 .movieItemWrapper:hover > div {
     box-shadow: 0 0 20px 5px rgb(0 0 0 / 30%);
 }
 
-.movieItemWrapper svg:hover {
+.movieItemWrapper > div > span:hover {
     transform: scale(1.2);
 }
 

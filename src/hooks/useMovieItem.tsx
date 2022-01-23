@@ -8,7 +8,7 @@ const useMovieItem = (movie: Movie) => {
     const navigate = useNavigate()
 
     const goToMovieDetail = (event: MouseEvent) => {
-        if((event.target as HTMLElement).tagName !== 'svg') {
+        if(!['span', 'svg'].includes((event.target as HTMLElement).tagName)) {
             navigate(`/movie/${movie.id}`)
         }
     }

@@ -23,8 +23,12 @@ const MovieItem = ({ movie }: Props) => {
     return (
         <div className={css.movieItemWrapper} onClick={goToMovieDetail}>
             <div>
-                <HeartIcon fill={isFavorited ? "red" : "#999"} onClick={toggleFavorite} width={20} height={20} />
-                <LaterIcon fill={isWatchListed ? "green" : "#999"} onClick={toggleWatchList} width={20} height={20} />
+                <span role="button" onClick={toggleFavorite}>
+                    <HeartIcon fill={isFavorited ? "red" : "#999"} width={20} height={20} />
+                </span>
+                <span role="button" onClick={toggleWatchList}>
+                    <LaterIcon fill={isWatchListed ? "green" : "#999"} width={20} height={20} />
+                </span>
                 <div className={css.movieItemTitle}>
                     <h5>{movie.title}</h5>
 
