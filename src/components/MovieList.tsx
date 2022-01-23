@@ -24,6 +24,10 @@ const MovieList = ({ movies, count }: Props) => {
         return <div>Loading movies...</div>
     }
 
+    if(!items?.length){
+        return <div>No items found :-(</div>
+    }
+
     return (
         <div>
             {(category ? items : items?.slice(0, count || 4))?.map((movie, key) => (

@@ -21,7 +21,7 @@ const useUpcomingMovies = () => {
     }, [])
 
     useEffect(() => {
-        if(upcomingResult?.results?.length) {
+        if(upcomingResult?.results) {
             dispatch({
                 type: ActionTypes.SET_MOVIES,
                 payload: upcomingResult?.results

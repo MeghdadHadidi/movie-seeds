@@ -21,7 +21,7 @@ const usePopularMovies = () => {
     }, [])
 
     useEffect(() => {
-        if(popularResult?.results?.length) {
+        if(popularResult?.results) {
             dispatch({
                 type: ActionTypes.SET_MOVIES,
                 payload: popularResult?.results

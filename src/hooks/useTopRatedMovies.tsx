@@ -21,7 +21,7 @@ const useTopRatedMovies = () => {
     }, [])
 
     useEffect(() => {
-        if(topRatedResult?.results?.length) {
+        if(topRatedResult?.results) {
             dispatch({
                 type: ActionTypes.SET_MOVIES,
                 payload: topRatedResult?.results

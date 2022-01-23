@@ -8,7 +8,7 @@ import { createInitialState, reducer, StoreProvider } from "./store"
 
 const initialState = createInitialState()
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV && process.env.REACT_APP_MOCK_ENABLED === 'development') {
   const { worker } = require('./mocks/browser')
   worker.start()
 }
