@@ -4,8 +4,26 @@
     width: 100%;
 }
 
-.movieListWrapper > h4 {
+.movieListWrapper header {
+    display: flex;
+    align-items: center;
+}
+
+.movieListWrapper h4 {
     color: #fff;
+    margin-right: 1rem;
+}
+
+.movieListWrapper header a {
+    color: #fff;
+    font-size: 12px;
+    opacity: 0.3;
+    text-decoration: none;
+    transition: opacity ease 0.3s;
+}
+
+.movieListWrapper:hover header a {
+    opacity: 1;
 }
 
 @media screen and (max-width: 767px) {

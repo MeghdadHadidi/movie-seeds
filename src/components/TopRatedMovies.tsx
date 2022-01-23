@@ -8,7 +8,7 @@ const TopRatedMovies = () => {
     useTopRatedMovies()
 
     return (
-        <MovieListWrapper title="Top Rated">
+        <MovieListWrapper path="/top-rated" title="Top Rated">
             <MovieList movies={topRatedMovies} />
         </MovieListWrapper>
     )

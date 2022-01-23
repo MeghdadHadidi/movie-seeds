@@ -8,7 +8,7 @@ const PopularMovies = () => {
     usePopularMovies()
 
     return (
-        <MovieListWrapper title="Popular">
+        <MovieListWrapper path="/popular" title="Popular">
             <MovieList movies={popularMovies} />
         </MovieListWrapper>
     )

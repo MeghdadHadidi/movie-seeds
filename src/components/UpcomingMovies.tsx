@@ -8,7 +8,7 @@ const UpcomingMovies = () => {
     useUpcomingMovies()
 
     return (
-        <MovieListWrapper title="Upcoming">
+        <MovieListWrapper path="/upcoming" title="Upcoming">
             <MovieList movies={upcomingMovies} />
         </MovieListWrapper>
     )
