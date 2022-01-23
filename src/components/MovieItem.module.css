@@ -30,7 +30,7 @@
 
 .movieItemWrapper > div > span {
     position: absolute;
-    left: 2px;
+    left: 5px;
     bottom: 2px;
     z-index: 1;
     opacity: 0.5;
@@ -41,6 +41,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 
 .movieItemWrapper > div > span:hover {

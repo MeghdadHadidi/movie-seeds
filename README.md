@@ -1,6 +1,21 @@
-# Getting Started with Create React App
+# Movie Seeds
+by Meghdad Hadidi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Demo
+A live version is available here on Netlify if you'd like to have a look and play around
+
+
+## Technology
+I am using a **React**+**TypeScript** setup created using `cra` tool. I use React context API to manage global state and for added security of keeping the state immutable I brought **immer** into the game.
+
+I use **react-router** to manage client-side routing and **axios** as http client, which is wrapped withing a React custom hook called `useAxios`. 
+
+An npm package called **react-intersection-observer** is used in another custom hook to keep track of images that are in viewport to avoid requesting for image sources that are not yet in the view. 
+
+Npm package **colors.js** helps us to get average color of a movie poster and use it in the background gradient when going in movie detail page.
+
+Using **msw** package to create an API mock server for testing purposes
+
 
 ## Available Scripts
 
