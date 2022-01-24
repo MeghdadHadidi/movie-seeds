@@ -6,7 +6,7 @@ interface Props {
     alt?: string
 }
 
-const LazyImage = ({ placeholder, src, ...rest }: Props) => {
+const LazyImage = ({ placeholder, src, alt, ...rest }: Props) => {
     const [ref, inView] = useInView({
         triggerOnce: true,
         delay: 1000,
@@ -16,6 +16,7 @@ const LazyImage = ({ placeholder, src, ...rest }: Props) => {
         <div ref={ref} style={{background: '#ccc', height: '100%', width: 92}}>
             {inView && <img 
                 {...rest} 
+                alt={alt}
                 src={inView ? src : placeholder || ''} 
             />}
         </div>

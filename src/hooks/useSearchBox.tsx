@@ -23,13 +23,13 @@ const useSearchBox = (keyword: string) => {
             })
             setSearchResult(searchResponse?.results)
         }
-    }, [searchResponse, searchError])
+    }, [searchResponse, searchError]) // eslint-disable-line react-hooks/exhaustive-deps
     
     const [debouncedSearch, cancelSearch] = useDebounce(search, 500)
 
     const resetResult = useCallback(() => {
         setSearchResult([])
-    }, [searchResult])
+    }, [])
 
     return {
         searchByKeyword: debouncedSearch,

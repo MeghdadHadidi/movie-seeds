@@ -32,7 +32,7 @@ const useMovieDetail = (movieId: string) => {
                 payload: ''
             })
         }
-    }, [movie])
+    }, [movie]) // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         if((!movie?.videos || !movie?.credits) && !movieDetailIsLoading && !movieDetailResponse){
@@ -46,7 +46,7 @@ const useMovieDetail = (movieId: string) => {
                 payload: [movieDetailResponse]
             })
         }
-    }, [movie, movieDetailResponse, movieDetailIsLoading])
+    }, [movie, movieDetailResponse, movieDetailIsLoading]) // eslint-disable-line react-hooks/exhaustive-deps
 
     return {
         fetchMovieDetail,

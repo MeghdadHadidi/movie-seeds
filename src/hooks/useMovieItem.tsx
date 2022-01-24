@@ -1,6 +1,6 @@
 import { MouseEvent } from "react"
 import { useNavigate } from "react-router-dom"
-import { useDispatch, useStore } from "../store"
+import { useDispatch } from "../store"
 import { ActionTypes, Movie } from "../store/types"
 
 const useMovieItem = (movie: Movie) => {

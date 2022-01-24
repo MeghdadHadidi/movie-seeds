@@ -18,7 +18,7 @@ const useUpcomingMovies = () => {
 
             fetchUpcoming()
         }
-    }, [])
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         if(upcomingResult?.results) {
@@ -32,7 +32,7 @@ const useUpcomingMovies = () => {
                 payload: upcomingResult?.results
             })
         }
-    }, [upcomingResult])
+    }, [upcomingResult]) // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         if(upcomingError){
@@ -41,7 +41,7 @@ const useUpcomingMovies = () => {
                 payload: upcomingError
             })
         }
-    }, [upcomingError])
+    }, [upcomingError]) // eslint-disable-line react-hooks/exhaustive-deps
 }
 
 export default useUpcomingMovies

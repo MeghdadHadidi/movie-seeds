@@ -18,7 +18,7 @@ const Layout = () => {
         if(backdropActive) {
             setGradientStyle(`linear-gradient(147deg, #000000 0%, ${averageColor || DEFAULT_SECOND_GRADIENT_COLOR} 75%)`)
         }
-    }, [averageColor])
+    }, [averageColor]) // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <div className={css.wrapper}>

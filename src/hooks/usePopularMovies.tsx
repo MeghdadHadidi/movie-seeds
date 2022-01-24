@@ -18,7 +18,7 @@ const usePopularMovies = () => {
 
             fetchPopular()
         }
-    }, [])
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         if(popularResult?.results) {
@@ -32,7 +32,7 @@ const usePopularMovies = () => {
                 payload: popularResult?.results
             })
         }
-    }, [popularResult])
+    }, [popularResult]) // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         if(popularError){
@@ -41,7 +41,7 @@ const usePopularMovies = () => {
                 payload: popularError
             })
         }
-    }, [popularError])
+    }, [popularError]) // eslint-disable-line react-hooks/exhaustive-deps
 }
 
 export default usePopularMovies

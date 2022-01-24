@@ -18,7 +18,7 @@ const useTopRatedMovies = () => {
 
             fetchTopRated()
         }
-    }, [])
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         if(topRatedResult?.results) {
@@ -32,7 +32,7 @@ const useTopRatedMovies = () => {
                 payload: topRatedResult?.results
             })
         }
-    }, [topRatedResult])
+    }, [topRatedResult]) // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         if(topRatedError){
@@ -41,7 +41,7 @@ const useTopRatedMovies = () => {
                 payload: topRatedError
             })
         }
-    }, [topRatedError])
+    }, [topRatedError]) // eslint-disable-line react-hooks/exhaustive-deps
 }
 
 export default useTopRatedMovies

@@ -29,7 +29,7 @@ const SearchBox = () => {
             return;
         };
         searchByKeyword()
-    }, [keyword])
+    }, [keyword]) // eslint-disable-line react-hooks/exhaustive-deps
 
     const searchInputClass = searchIsLoading ? css.searchInputLoading : css.searchInput
 

@@ -35,7 +35,7 @@ const MovieCast = ({ cast, count }: Props) => {
             <ul role="grid">
                 {cast?.slice(0, count || Number.MAX_SAFE_INTEGER).map(cast => (
                     <li key={cast.id} role="gridcell">
-                        <picture role="figure">
+                        <picture>
                             <img src={getAvatar(cast)} alt={cast.name} />
                         </picture>
                         <span>{cast.name}</span>
