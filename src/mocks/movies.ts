@@ -34,9 +34,6 @@ export const topRatedSuccessHandler = rest.get(/\/movie\/top_rated/, (req, res, 
 export const movieDetailSuccessHandler = rest.get(/\/movie\/123123/, (req, res, ctx) => {
     return res(
         ctx.status(200),
-        ctx.json({
-            page: 1,
-            results: movieDetail
-        })
+        ctx.json(movieDetail)
     )
 })

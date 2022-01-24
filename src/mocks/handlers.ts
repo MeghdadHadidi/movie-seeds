@@ -1,7 +1,8 @@
-import { popularSuccessHandler, topRatedSuccessHandler, upcomingSuccessHandler } from "./movies"
+import { movieDetailSuccessHandler, popularSuccessHandler, topRatedSuccessHandler, upcomingSuccessHandler } from "./movies"
 
 export const handlers = [
     upcomingSuccessHandler,
     popularSuccessHandler,
-    topRatedSuccessHandler
+    topRatedSuccessHandler,
+    movieDetailSuccessHandler
 ]

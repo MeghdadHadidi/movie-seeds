@@ -11,7 +11,7 @@ const MovieDetail = ({ movieId }: Props) => {
     const { movie, genres } = useMovieDetail(movieId)
 
     if(!movieId || !movie) return null;
-    
+        
     return (
         <Container>
             <MovieDetailSummary movie={movie} genres={genres} />
