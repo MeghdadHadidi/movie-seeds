@@ -24,7 +24,8 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: ${{ matr  ix.node-version }}
+        args: -D warnings
         cache: 'yarn'
     - run: yarn install --frozen-lockfile
     - run: yarn build --if-present
