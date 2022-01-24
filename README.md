@@ -4,6 +4,10 @@ by Meghdad Hadidi
 ## Demo
 A live version is available here on Netlify if you'd like to have a look and play around
 
+https://flamboyant-mccarthy-e6554e.netlify.app/
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8dd09cd8-6c21-42c2-abe4-f035144c250d/deploy-status)](https://app.netlify.com/sites/flamboyant-mccarthy-e6554e/deploys)
+
 
 ## Technology
 I am using a **React**+**TypeScript** setup created using `cra` tool. I use React context API to manage global state and for added security of keeping the state immutable I brought **immer** into the game.
